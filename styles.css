@@ -114,7 +114,8 @@ section {
 }
 
 .project a:hover {
-  background-color: #2c2c40;
+  transform: scale(1.05);
+  background-color: #0056b3;
 }
 
 /* Skills */
@@ -178,4 +179,31 @@ section {
     flex-direction: column;
     align-items: center;
   }
+}
+/* Back to top Button */
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 1000;
+}
+
+#backToTop.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+#backToTop:hover {
+  background-color: #0056b3;
 }
