@@ -8,28 +8,34 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <aside id="sidebar">
-    <div>
-      <img src="images/profile.jpg" alt="Profile of Arbi Pacolli" />
-      <h2>Arbi Pacolli</h2>
-      <nav>
-        <ul>
-          <li><a href="#about">About Me</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+  <aside id="sidebar" aria-label="Sidebar Navigation">
+    <button id="sidebarToggle" aria-expanded="true" aria-controls="sidebar" aria-label="Toggle sidebar navigation">
+      &#9776;
+    </button>
+    <div class="sidebar-content">
+      <div>
+        <img src="images/profile.jpg" alt="Profile of Arbi Pacolli" />
+        <h2>Arbi Pacolli</h2>
+        <nav>
+          <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <footer>
+        <p>&copy; 2025 Arbi Pacolli</p>
+        <a href="https://www.linkedin.com/in/arbipacolli" target="_blank" rel="noopener noreferrer">
+          <img src="linkedin.png" alt="LinkedIn Profile" />
+        </a>
+        <a href="https://github.com/biTo24" target="_blank" rel="noopener noreferrer">
+          <img src="github.png" alt="GitHub Profile" />
+        </a>
+      </footer>
     </div>
-    <footer>
-      <p>&copy; 2025 Arbi Pacolli</p>
-      <a href="https://www.linkedin.com/in/arbipacolli" target="_blank" rel="noopener noreferrer">
-        <img src="linkedin.png" alt="LinkedIn Profile" />
-      </a>
-      <a href="https://github.com/biTo24" target="_blank" rel="noopener noreferrer">
-        <img src="github.png" alt="GitHub Profile" />
-      </a>
-    </footer>
   </aside>
 
   <main id="content">
@@ -38,13 +44,11 @@
       <p>Building mobile-first solutions for real-world problems</p>
     </header>
 
-    <!-- Hero Section -->
     <section id="hero">
       <h2>Welcome to My Portfolio</h2>
       <p>Explore my projects and skills in technology.</p>
     </section>
 
-    <!-- About Me -->
     <section id="about">
       <h2>About Me</h2>
       <p>
@@ -52,15 +56,11 @@
       </p>
     </section>
 
-    <!-- Projects -->
     <section id="projects">
       <h2>Projects</h2>
       <div class="project-grid">
-
         <div class="project-card">
-          <!-- <div class="project-gallery">
-            <img src="images/Logo.png" alt="News Extraction System" />
-          </div> -->
+          <img src="images/Logo.png" alt="News Extraction System" />
           <h3>News Extraction System</h3>
           <p>Scrapes headlines from 20+ news portals using stealth scraping methods. Visualized via Tkinter GUI and saved to CSV.</p>
           <div class="tech-stack">
@@ -69,80 +69,80 @@
             <span>BeautifulSoup</span>
             <span>Pandas</span>
           </div>
-          <a href="https://github.com/biTo24/Web-Scraping" target="_blank">GitHub</a>
+          <a href="https://github.com/biTo24/Web-Scraping" target="_blank" class="btn-primary">GitHub</a>
         </div>
       </div>
     </section>
 
-    <!-- Skills -->
     <section id="skills">
-  <h2>Skills</h2>
+      <h2>Skills</h2>
+      <div class="skills-container">
+        <div class="skill-group">
+          <h3>Programming Languages</h3>
+          <div class="skills">
+            <span class="skill-item">Python</span>
+            <span class="skill-item">Java</span>
+            <span class="skill-item">HTML</span>
+            <span class="skill-item">CSS</span>
+            <span class="skill-item">JavaScript</span>
+          </div>
+        </div>
 
-  <div class="skills-container">
+        <div class="skill-group">
+          <h3>Cloud & DevOps</h3>
+          <div class="skills">
+            <span class="skill-item">AWS</span>
+            <span class="skill-item">Docker</span>
+            <span class="skill-item">CI/CD</span>
+          </div>
+        </div>
 
-    <div class="skill-group">
-      <h3>Programming Languages</h3>
-      <div class="skills">
-        <span class="skill-item">Python</span>
-        <span class="skill-item">Java</span>
-        <span class="skill-item">HTML</span>
-        <span class="skill-item">CSS</span>
-        <span class="skill-item">JavaScript</span>
+        <div class="skill-group">
+          <h3>Networking & Security</h3>
+          <div class="skills">
+            <span class="skill-item">CCNA Certified</span>
+            <span class="skill-item">Cybersecurity Basics</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3>Tools & IDEs</h3>
+          <div class="skills">
+            <span class="skill-item">VSCode</span>
+            <span class="skill-item">Eclipse</span>
+            <span class="skill-item">TeraTerm</span>
+            <span class="skill-item">PuTTY</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3>Productivity</h3>
+          <div class="skills">
+            <span class="skill-item">MS PowerPoint</span>
+            <span class="skill-item">MS Word</span>
+            <span class="skill-item">MS Access</span>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div class="skill-group">
-      <h3>Cloud & DevOps</h3>
-      <div class="skills">
-        <span class="skill-item">AWS</span>
-        <span class="skill-item">Docker</span>
-        <span class="skill-item">CI/CD</span>
-      </div>
-    </div>
+    <section id="resume">
+      <h2>Resume</h2>
+      <p>You can download my resume here:</p>
+      <a href="cv/Arbi Pacolli CV.pdf" download class="btn-primary" target="_blank" rel="noopener noreferrer">
+        Download Resume
+      </a>
+    </section>
 
-    <div class="skill-group">
-      <h3>Networking & Security</h3>
-      <div class="skills">
-        <span class="skill-item">CCNA Certified</span>
-        <span class="skill-item">Cybersecurity Basics</span>
-      </div>
-    </div>
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:arbipacolli08@gmail.com">arbipacolli08@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/arbipacolli" target="_blank" rel="noopener noreferrer">linkedin.com/in/arbipacolli</a></p>
+      <p>GitHub: <a href="https://github.com/biTo24" target="_blank" rel="noopener noreferrer">github.com/biTo24</a></p>
+    </section>
 
-    <div class="skill-group">
-      <h3>Tools & IDEs</h3>
-      <div class="skills">
-        <span class="skill-item">VSCode</span>
-        <span class="skill-item">Eclipse</span>
-        <span class="skill-item">TeraTerm</span>
-        <span class="skill-item">PuTTY</span>
-      </div>
-    </div>
-
-    <div class="skill-group">
-      <h3>Productivity</h3>
-      <div class="skills">
-        <span class="skill-item">MS PowerPoint</span>
-        <span class="skill-item">MS Word</span>
-        <span class="skill-item">MS Access</span>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- Resume Section -->
-<section id="resume">
-  <h2>Resume</h2>
-  <p>You can download my resume here:</p>
-  <a href="cv/Arbi Pacolli CV.pdf" download class="btn-primary" target="_blank" rel="noopener noreferrer">
-    Download Resume
-  </a>
-</section>
-
-<!-- Contact Section -->
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Email: <a href="mailto:arbipacolli08@gmail.com">arbipacolli08@gmail.com</a></p>
-  <p>LinkedIn: <a href="https://www.linkedin.com/in/arbipacolli" target="_blank" rel="noopener noreferrer">linkedin.com/in/arbipacolli</a></p>
-  <p>GitHub: <a href="https://github.com/biTo24" target="_blank" rel="noopener noreferrer">github.com/biTo24</a></p>
-</section>
+    <button id="backToTop" aria-label="Back to top">&#8679;</button>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
