@@ -136,6 +136,29 @@ section {
   transform: translateY(-2px);
 }
 
+/* ===== .btn-primary (for Resume & Contact buttons) ===== */
+.btn-primary {
+  display: inline-block;
+  background-color: #3b82f6;
+  color: #ffffff;
+  padding: 0.6rem 1.2rem;
+  font-weight: 500;
+  font-size: 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  border: none;
+  text-align: center;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #2563eb;
+  transform: translateY(-2px);
+  outline: none;
+}
+
 /* ===== Skills ===== */
 .skills {
   display: flex;
@@ -212,6 +235,7 @@ section {
     align-items: center;
   }
 }
+
 /* ===== Project Grid & Cards ===== */
 .project-grid {
   display: grid;
