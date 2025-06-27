@@ -8,40 +8,24 @@
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </head>
 <body>
-  <!-- Sidebar -->
-  <aside id="sidebar" role="navigation" aria-label="Primary navigation">
-    <h2>Arbi Dev</h2>
-    <img src="images/profile.jpg" alt="Arbi's Profile Picture" />
+  <!-- Header -->
+   <aside>  
     <nav>
       <ul>
         <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About Me</a></li>           
         <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>   
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+
     </nav>
-    
-    <!-- Dark Mode Toggle -->
-    <button id="darkModeToggle" aria-label="Toggle dark mode" style="
-      margin-top: 1rem; 
-      padding: 0.5rem 1rem; 
-      border: none; 
-      background: var(--primary-color); 
-      color: white; 
-      border-radius: var(--btn-radius); 
-      cursor: pointer;">
-      Toggle Dark Mode
-    </button>
-
-    <footer>
-      <p>&copy; 2025 Arbi Dev</p>
-      <img src="images/github-icon.svg" alt="GitHub" tabindex="0" />
-    </footer>
   </aside>
-
-  <!-- Main Content -->
+  
+<!-- Main Content -->
   <main id="content">
-    <!-- Parallax Hero Section -->
+    <!-- Hero Section -->
     <section id="hero" class="hero" tabindex="-1" aria-label="Introduction and welcome">
       <div class="hero-bg" aria-hidden="true"></div>
       <div class="hero-text">
@@ -49,74 +33,87 @@
         <p id="typed-text" aria-live="polite" aria-atomic="true"></p>
       </div>
     </section>
-
+    <!-- About Me Section -->
+    <section id="about" tabindex="-1" aria-label="About me section">
+      <h2>About Me</h2>
+      <p>
+      I’m Arbi Pacolli, a software development student at SH.M.L “Gjin Gazulli” with a focus on programming, networking, and cybersecurity. I have hands-on experience with Python, Java, AWS, and router/switch configurations, backed by CCNA and cybersecurity certifications. I'm passionate about building secure, smart solutions and always eager to learn more.<img src="images/profile.jpg" alt="Arbi's Profile Picture" class="profile-picture" />
+    
     <!-- Skills Section -->
+    <h2>Tech-Stack</h2>
     <section id="skills" tabindex="-1" aria-label="Skills overview">
-      <h2>Skills</h2>
       <div class="skills-container">
-        <div class="skill-card">
-          <h3>Programming Languages</h3>
-          <div class="skills">
-            <span class="skill-item">Python</span>
-            <span class="skill-item">JavaScript</span>
-            <span class="skill-item">Java</span>
-          </div>
+
+        <!-- Programming Languages -->
+        
+        <h3>Programming Languages</h3>
+        <div class="skill-items">
+          <span class="skill-item">Python</span>
+          <span class="skill-item">JavaScript</span>
+          <span class="skill-item">Java</span>
         </div>
-        <div class="skill-card">
-          <h3>Frameworks & Tools</h3>
-          <div class="skills">
-            <span class="skill-item">React</span>
-            <span class="skill-item">Django</span>
+      </div>
+      
+      <!-- Frameworks & Tools -->
+      
+      <h3>Frameworks & Tools</h3>
+      <div class="skill-items">
+        <span class="skill-item">React</span>
+        <span class="skill-item">Django</span>
             <span class="skill-item">Node.js</span>
           </div>
         </div>
+        
+        <!-- Cloud & DevOps -->
+        
+        <h3>Cloud & DevOps</h3>
+        <div class="skill-items">
+          <span class="skill-item">AWS</span>
+          <span class="skill-item">Docker</span>
+          <span class="skill-item">GitHub Actions</span>
+        </div>
       </div>
-    </section>
+      
+    </div>
+  </section>
+  
+  <!-- Projects Section -->
+  <section id="projects" tabindex="-1" aria-label="Project portfolio">
+    <h2>Projects</h2>
+    <div class="project-grid">
+      <article class="project-card" tabindex="0">
+        <h3>Undetectable News Extraction</h3>
+        <p>Stealth news scraping system with Tkinter GUI and CSV storage.</p>
+        <div class="tech-stack">
+          <span>Python</span>
+          <span>Tkinter</span>
+          <span>BeautifulSoup</span>
+          <span>Web Scraping</span>
+        </div>
+      </article>
+    </div>
+  </section>
+  
+  <!-- Contact Section -->
+  <section id="contact" tabindex="-1" aria-label="Contact form">
+    <h2>Contact Me</h2>
+    <form id="contactForm" action="your-backend-endpoint" method="POST">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required autocomplete="name" />
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required autocomplete="email" />
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+      <button type="submit" class="btn-primary">Send</button>
+    </form>
+  </section>
+</main>
 
-    <!-- Projects Section -->
-    <section id="projects" tabindex="-1" aria-label="Project portfolio">
-      <h2>Projects</h2>
-      <div class="project-grid">
-        <article class="project-card" tabindex="0">
-          <h3>Undetectable News Extraction</h3>
-          <p>Stealth news scraping system with Tkinter GUI and CSV storage.</p>
-          <div class="tech-stack">
-            <span>Python</span>
-            <span>Tkinter</span>
-            <span>Web Scraping</span>
-          </div>
-        </article>
-        <article class="project-card" tabindex="0">
-          <h3>Social Media AutoPoster</h3>
-          <p>Automated posts on social media via Django backend.</p>
-          <div class="tech-stack">
-            <span>Django</span>
-            <span>JavaScript</span>
-            <span>APIs</span>
-          </div>
-        </article>
-      </div>
-    </section>
+<footer>
+  <p>&copy; 2025 Arbi Dev</p>
+  <img src="images/github-icon.svg" alt="GitHub" tabindex="0" />
+</footer>
 
-    <!-- Contact Section -->
-    <section id="contact" tabindex="-1" aria-label="Contact form">
-      <h2>Contact Me</h2>
-      <form id="contactForm" action="your-backend-endpoint" method="POST" aria-describedby="formInstructions">
-        <p id="formInstructions">Fill out the form below to get in touch.</p>
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required autocomplete="name" />
-
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required autocomplete="email" />
-
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
-
-        <button type="submit" class="btn-primary">Send</button>
-      </form>
-    </section>
-  </main>
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

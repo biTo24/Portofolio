@@ -41,22 +41,4 @@ document.addEventListener("DOMContentLoaded", () => {
       cursorChar: "|"
     });
   }
-
-  // Dark Mode Toggle
-  const toggleBtn = document.getElementById('darkModeToggle');
-  if (toggleBtn) {
-    toggleBtn.addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-      if (document.body.classList.contains('dark-mode')) {
-        localStorage.setItem('darkMode', 'enabled');
-      } else {
-        localStorage.removeItem('darkMode');
-      }
-    });
-  }
-
-  // Apply saved dark mode preference on load
-  if (localStorage.getItem('darkMode') === 'enabled') {
-    document.body.classList.add('dark-mode');
-  }
 });
