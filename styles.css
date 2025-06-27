@@ -34,7 +34,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 250px;
+  width: 280px;
   height: 100vh;
   background-color: var(--sidebar-bg);
   padding: 2rem 1rem;
@@ -95,7 +95,7 @@ body {
   position: fixed;
   bottom: 0;
   left: 0;
-  width: 250px;
+  width: 280px;
   padding: 1rem 0;
   text-align: center;
   color: #9ca3af;
@@ -381,4 +381,125 @@ section:focus-within {
     flex-direction: column;
     align-items: center;
   }
+}
+
+/* ===== Dark Mode ===== */
+body.dark-mode {
+  --primary-color: #60a5fa;
+  --primary-hover: #3b82f6;
+  --bg-color: #121212;
+  --text-color: #e5e7eb;
+  --sidebar-bg: #1f2937;
+  --sidebar-border: #374151;
+}
+
+body.dark-mode {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+body.dark-mode #sidebar {
+  background-color: var(--sidebar-bg);
+  border-right: 1px solid var(--sidebar-border);
+  color: var(--text-color);
+}
+
+body.dark-mode #sidebar nav ul li a {
+  color: #d1d5db;
+}
+
+body.dark-mode #sidebar nav ul li a:hover,
+body.dark-mode #sidebar nav ul li a:focus-visible {
+  background-color: #4b5563;
+  color: #f9fafb;
+}
+
+body.dark-mode #sidebar footer {
+  background-color: var(--sidebar-bg);
+  border-top: 1px solid var(--sidebar-border);
+  color: #9ca3af;
+}
+
+body.dark-mode section {
+  background-color: #1e293b;
+  border-color: #334155;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+  color: var(--text-color);
+}
+
+body.dark-mode section:hover,
+body.dark-mode section:focus-within {
+  box-shadow: 0 6px 14px rgba(96, 165, 250, 0.5);
+}
+
+body.dark-mode .btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+body.dark-mode .btn-primary:hover,
+body.dark-mode .btn-primary:focus-visible {
+  background-color: var(--primary-hover);
+  box-shadow: 0 0 0 3px var(--primary-hover);
+}
+
+body.dark-mode .skill-card {
+  background-color: #283046;
+  border-color: #374151;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  color: var(--text-color);
+}
+
+body.dark-mode .skill-item {
+  background-color: #3b82f6;
+  color: white;
+}
+
+body.dark-mode .project-card {
+  background-color: #283046;
+  border-color: #334155;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.7);
+  color: var(--text-color);
+}
+
+body.dark-mode .tech-stack span {
+  background-color: #475569;
+  color: #93c5fd;
+}
+
+body.dark-mode #sidebarToggle span {
+  background: var(--primary-color);
+}
+
+/* ===== Parallax Hero Background ===== */
+.hero {
+  position: relative;
+  overflow: hidden;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2rem;
+}
+
+.hero-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('images/your-parallax-bg.jpg'); /* Replace with your image */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  filter: brightness(0.6);
+  z-index: -1;
+  transform: translateZ(0);
+}
+
+.hero-text {
+  max-width: 700px;
+  text-align: center;
+  z-index: 10;
 }
