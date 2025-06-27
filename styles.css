@@ -76,3 +76,27 @@ h2 {
   font-size: 2.2rem; /* Increased font size */
   color: #2196f3;
 }
+
+#about {
+  background: rgba(33, 150, 243, 0.08);
+  border-radius: 1.5rem;
+  max-width: 700px;
+  margin: 3rem auto 0 auto;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 4px 24px rgba(33, 150, 243, 0.12);
+  position: relative;
+}
+
+#about h2 {
+  color: #fff;
+  font-size: 2.2rem;
+  margin-bottom: 1.2rem;
+  letter-spacing: 1px;
+}
+
+#about p {
+  color: #b3e5fc;
+  font-size: 1.25rem;
+  line-height: 1.7;
+  margin: 0;
+}
