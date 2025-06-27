@@ -503,4 +503,96 @@ h2 {
   box-shadow: 0 4px 16px rgba(33, 150, 243, 0.18);
   outline: 2px solid #2196f3;
 }
+/* Download Resume Button Styling */
+a.btn-primary[download] {
+  display: inline-block;
+  margin-top: 1.2rem;
+  padding: 0.7rem 1.5rem;
+  background: #2196f3;
+  color: #fff;
+  border: none;
+  border-radius: 1rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.10);
+  letter-spacing: 0.5px;
+  transition: background 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s, outline 0.2s;
+  outline: 2px solid transparent;
+  outline-offset: 0.1rem;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
 
+a.btn-primary[download]:hover,
+a.btn-primary[download]:focus {
+  background: #fff;
+  color: #2196f3;
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 4px 16px rgba(33, 150, 243, 0.18);
+  outline: 2px solid #2196f3;
+}
+
+a.btn-primary[download]::after {
+  content: "⬇";
+  font-size: 1.1rem;
+  margin-left: 0.6rem;
+  vertical-align: middle;
+  color: #b3e5fc;
+  transition: color 0.2s;
+}
+
+a.btn-primary[download]:hover::after,
+a.btn-primary[download]:focus::after {
+  color: #2196f3;
+}
+
+/* Footer */
+footer {
+  background: rgba(33, 150, 243, 0.10);
+  border-radius: 1.2rem;
+  max-width: 700px;
+  margin: 2.5rem auto 1.5rem auto;
+  padding: 1.2rem 2rem;
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.10);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+  color: #b3e5fc;
+  font-size: 1.1rem;
+  position: relative;
+}
+
+footer p {
+  margin: 0;
+  color: #b3e5fc;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+}
+
+footer img {
+  width: 2.1rem;
+  height: 2.1rem;
+  filter: brightness(0) invert(1) drop-shadow(0 0 2px #2196f3);
+  transition: filter 0.2s, transform 0.2s;
+  cursor: pointer;
+  outline: none;
+  border-radius: 50%;
+  background: rgba(33, 150, 243, 0.18);
+  padding: 0.25rem;
+  margin: 0 0 0 -0.3rem; /* Negative left margin brings images closer */
+}
+
+footer img:first-child {
+  margin-left: 0; /* No negative margin for the first image */
+  margin-right: 0; /* No right margin for the first image */;
+}
+
+footer img:hover,
+footer img:focus {
+  filter: brightness(1) invert(0) drop-shadow(0 0 6px #2196f3);
+  background: #2196f3;
+  transform: scale(1.08) translateY(-2px);
+}
