@@ -77,6 +77,7 @@ h2 {
   color: #2196f3;
 }
 
+/* About Me section */
 #about {
   background: rgba(33, 150, 243, 0.08);
   border-radius: 1.5rem;
@@ -85,6 +86,17 @@ h2 {
   padding: 2.5rem 2rem;
   box-shadow: 0 4px 24px rgba(33, 150, 243, 0.12);
   position: relative;
+  transition: box-shadow 0.3s, background 0.3s, outline 0.3s;
+  text-align: center;
+  outline: 2px solid transparent;
+  outline-offset: 0.2rem;
+}
+
+#about:hover,
+#about:focus-within {
+  background: rgba(33, 150, 243, 0.15);
+  box-shadow: 0 8px 32px rgba(33, 150, 243, 0.18);
+  outline: 2.5px solid #2196f3;
 }
 
 #about h2 {
@@ -99,4 +111,75 @@ h2 {
   font-size: 1.25rem;
   line-height: 1.7;
   margin: 0;
+  text-align: center;
+}
+
+/* Skills Section */
+#skills {
+  background: rgba(33, 150, 243, 0.08);
+  border-radius: 1.5rem;
+  max-width: 700px; /* Reduced from 800px */
+  margin: 3rem auto 0 auto;
+  padding: 2.5rem 2rem 2rem 2rem;
+  box-shadow: 0 4px 24px rgba(33, 150, 243, 0.10);
+  position: relative;
+  text-align: center;
+  transition: box-shadow 0.3s, background 0.3s, outline 0.3s;
+  outline: 2px solid transparent;
+  outline-offset: 0.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+#skills:hover,
+#skills:focus-within {
+  background: rgba(33, 150, 243, 0.18);
+  box-shadow: 0 8px 32px rgba(33, 150, 243, 0.18);
+  outline: 2.5px solid #2196f3;
+}
+
+#skills h2 {
+  color: #fff;
+  font-size: 2.2rem;
+  margin-bottom: 1.2rem;
+  letter-spacing: 1px;
+}
+#skills h3 {
+  color: #2196f3;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem; /* Increased space below */
+  margin-top: 1.5rem;    /* Increased space above */
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  text-align: center;
+}
+.skill-items {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+
+.skill-item {
+  background: rgba(33, 150, 243, 0.18);
+  color: #fff;
+  border-radius: 2rem;
+  padding: 0.5rem 1.3rem;
+  font-size: 1.4rem; /* Increased font size */
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.10);
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  border: 1px solid rgba(33, 150, 243, 0.25);
+  margin-bottom: 0.3rem;
+}
+
+.skill-item:hover,
+.skill-item:focus {
+  background: #2196f3;
+  color: #0d1333;
+  transform: translateY(-3px) scale(1.06);
+  cursor: pointer;
+  outline: none;
 }
