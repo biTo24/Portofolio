@@ -9,13 +9,17 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Smooth scroll to center the element vertically in viewport
-  function smoothScrollToCenter(element, duration = 700) {
+  function smoothScrollToCenter(element, baseDuration = 700) {
     const elementRect = element.getBoundingClientRect();
     const elementCenterY = elementRect.top + window.pageYOffset + elementRect.height / 2;
     const viewportCenterY = window.innerHeight / 2;
     const targetPosition = elementCenterY - viewportCenterY;
     const startPosition = window.pageYOffset;
     const distance = targetPosition - startPosition;
+
+    // Make duration longer if scrolling down, shorter if up
+    const duration = distance > 0 ? baseDuration * 1.8 : baseDuration * 0.8;
+
     let startTime = null;
 
     function easeInOutCubic(t) {
@@ -34,6 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
         requestAnimationFrame(animation);
       }
     }
+
     requestAnimationFrame(animation);
   }
 
@@ -45,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const targetId = link.getAttribute("href").slice(1);
       const targetElement = document.getElementById(targetId);
       if (targetElement) {
-        smoothScrollToCenter(targetElement, 800);
+        smoothScrollToCenter(targetElement, 700);
       }
     });
   });
