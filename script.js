@@ -59,10 +59,10 @@ document.addEventListener("DOMContentLoaded", () => {
   if (typeof Typed !== "undefined") {
     new Typed("#typed-text", {
       strings: [
-        "Crafting mobile-first software.",
-        "Building smart automation tools.",
-        "Exploring AI and Cloud.",
-        "Solving real-world problems with code."
+        "Crafting mobile-first software",
+        "Building smart automation tools",
+        "Exploring AI and Cloud",
+        "Solving real-world problems with code"
       ],
       typeSpeed: 40,
       backSpeed: 20,
