@@ -72,4 +72,24 @@ document.addEventListener("DOMContentLoaded", () => {
       cursorChar: "|"
     });
   }
+    // Back to Top button functionality
+  const backToTopButton = document.getElementById("backToTop");
+
+  // Show or hide the button based on scroll position
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      backToTopButton.style.display = "block";
+    } else {
+      backToTopButton.style.display = "none";
+    }
+  });
+
+  // Smooth scroll to top on click
+  backToTopButton.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+
 });
