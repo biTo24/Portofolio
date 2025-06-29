@@ -10,159 +10,161 @@
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+  
 </head>
 <body>
-  <!-- Header -->
-  <aside>  
-    <nav>
+
+  <!-- Header Navigation -->
+  <header>
+    <nav aria-label="Main navigation">
       <ul>
         <li><a href="#hero">Home</a></li>
-        <li><a href="#about">About</a></li>           
+        <li><a href="#about">About</a></li>
         <li><a href="#skills">Tech-Stack</a></li>
-        <li><a href="#experience">Experience</a></li>   
+        <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-  </aside>
-  
+  </header>
+
   <!-- Main Content -->
   <main id="content">
+    
     <!-- Hero Section -->
-    <section id="hero" class="hero" tabindex="-1" aria-label="Introduction and welcome">
+    <section id="hero" class="hero" aria-label="Introduction and welcome">
       <div class="hero-bg" aria-hidden="true"></div>
       <div class="hero-text">
         <h1>Arbi Pacolli</h1>
         <p id="typed-text" aria-live="polite" aria-atomic="true"></p>
       </div>
     </section>
-    
+
     <!-- About Me Section -->
-    <section id="about" tabindex="-1" aria-label="About me section">
+    <section id="about" aria-label="About me">
       <h2>About Me</h2>
       <p>
-        I’m Arbi Pacolli, a software development student at SH.M.L “Gjin Gazulli” with a focus on programming, networking, and cybersecurity. I have hands-on experience with Python, Java, AWS, and router/switch configurations, backed by CCNA and cybersecurity certifications. I'm passionate about building secure, smart solutions and always eager to learn more.
+        I’m Arbi Pacolli, a software development student at SH.M.L “Gjin Gazulli” focusing on programming, networking, and cybersecurity. I have hands-on experience with Python, Java, AWS, and router/switch configurations, supported by CCNA and cybersecurity certifications. I enjoy building secure, smart solutions and continuously expanding my knowledge.
       </p>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" tabindex="-1" aria-label="Skills overview">
+    <section id="skills" aria-label="Technical skills">
       <h2>Tech-Stack</h2>
-      <div class="skills-container">
-
-        <!-- Programming Languages -->
+      
+      <section>
         <h3>Programming Languages</h3>
-        <div class="skill-items">
-          <span class="skill-item">Python</span>
-          <span class="skill-item">JavaScript</span>
-          <span class="skill-item">Java</span>
-          <span class="skill-item">HTML</span>
-          <span class="skill-item">CSS</span>
-        </div>
+        <ul class="skill-items">
+          <li>Python</li>
+          <li>JavaScript</li>
+          <li>Java</li>
+          <li>HTML</li>
+          <li>CSS</li>
+        </ul>
+      </section>
 
-        <!-- Frameworks & Tools -->
+      <section>
         <h3>Frameworks</h3>
-        <div class="skill-items">
-          <!-- <span class="skill-item">React</span> -->
-          <span class="skill-item">Django</span>
-          <span class="skill-item">Node.js</span>
-          <span class="skill-item">Express.js</span>
-          <span class="skill-item">Flask</span>
-          <span class="skill-item">Spring Boot</span>
-        </div>
+        <ul class="skill-items">
+          <li>Django</li>
+          <li>Node.js</li>
+          <li>Express.js</li>
+          <li>Flask</li>
+          <li>Spring Boot</li>
+        </ul>
+      </section>
 
-        <!-- Cloud & DevOps -->
+      <section>
         <h3>Cloud & DevOps</h3>
-        <div class="skill-items">
-          <span class="skill-item">AWS</span>
-          <span class="skill-item">Docker</span>
-          <span class="skill-item">GitHub Actions</span>
-        </div>
+        <ul class="skill-items">
+          <li>AWS</li>
+          <li>Docker</li>
+          <li>GitHub Actions</li>
+        </ul>
+      </section>
 
-        <!-- Networking & Cybersecurity -->
+      <section>
         <h3>Networking & Cybersecurity</h3>
-        <div class="skill-items">
-          <span class="skill-item">CCNA</span>
-          <span class="skill-item">Cybersecurity</span>
-          <span class="skill-item">Router/Switch Configurations</span>
-          <span class="skill-item">Network Security</span>
-        </div>
-      </div>
+        <ul class="skill-items">
+          <li>CCNA</li>
+          <li>Cybersecurity</li>
+          <li>Router/Switch Configurations</li>
+          <li>Network Security</li>
+        </ul>
+      </section>
     </section>
-    
+
     <!-- Experience Section -->
-    <section id="experience" tabindex="-1" aria-label="Work experience">
+    <section id="experience" aria-label="Work experience">
       <h2>Experience</h2>
-      <div class="experience-list">
-        <article class="experience-item" tabindex="0">
-          <h3>Social Media Intern – Dyqani.com <span class="date">July – August 2024</span></h3>
-          <p>Managed and maintained the company's social media presence, contributing to digital outreach and engagement strategies.</p>
-        </article>
-        <article class="experience-item" tabindex="0">
-          <h3>Software Development Intern – Polymath Services <span class="date">July – August 2024</span></h3>
-          <p>Worked with cloud technologies (AWS) and contributed to software development projects using modern programming practices.</p>
-        </article>
-        <article class="experience-item" tabindex="0">
-          <h3>IT & Technical Intern – Home Property Management <span class="date">June – Ongoing</span></h3>
-          <p>Configured internet modems, set up client authorizations, and installed security camera systems with remote access functionality.</p>
-        </article>
-      </div>
+      <article>
+        <h3>Social Media Intern – Dyqani.com <span class="date">July – August 2024</span></h3>
+        <p>Managed and maintained the company's social media presence, contributing to digital outreach and engagement strategies.</p>
+      </article>
+      <article>
+        <h3>Software Development Intern – Polymath Services <span class="date">July – August 2024</span></h3>
+        <p>Worked with cloud technologies (AWS) and contributed to software development projects using modern programming practices.</p>
+      </article>
+      <article>
+        <h3>IT & Technical Intern – Home Property Management <span class="date">June – Ongoing</span></h3>
+        <p>Configured internet modems, set up client authorizations, and installed security camera systems with remote access functionality.</p>
+      </article>
     </section>
-    
+
     <!-- Projects Section -->
-    <section id="projects" tabindex="-1" aria-label="Project portfolio">
+    <section id="projects" aria-label="Project portfolio">
       <h2>Projects</h2>
-      <div class="project-grid">
-        <article class="project-card" tabindex="0">
-          <h3>Undetectable News Extraction</h3>
-          <p>Stealth news scraper with Tkinter GUI and CSV storage. Extracts headlines from multiple sites while avoiding detection. User-friendly interface with customizable sources and offline data access.</p>
-          <div class="tech-stack">
-            <span>Python</span>
-            <span>Tkinter</span>
-            <span>BeautifulSoup</span>
-            <span>Web Scraping</span>
-            <span>API Integration</span>
-          </div>
-        </article>
-      </div>
+      <article class="project-card">
+        <h3>Undetectable News Extraction</h3>
+        <p>Stealth news scraper with Tkinter GUI and CSV storage. Extracts headlines from multiple sites while avoiding detection. User-friendly interface with customizable sources and offline data access.</p>
+        <ul class="tech-stack">
+          <li>Python</li>
+          <li>Tkinter</li>
+          <li>BeautifulSoup</li>
+          <li>Web Scraping</li>
+          <li>API Integration</li>
+        </ul>
+      </article>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" tabindex="-1" aria-label="Contact form">
+    <section id="contact" aria-label="Contact form">
       <h2>Contact Me</h2>
       <form id="contactForm" action="your-backend-endpoint" method="POST">
         <label for="name">Name</label>
         <input type="text" id="name" name="name" required autocomplete="name" />
+        
         <label for="email">Email</label>
         <input type="email" id="email" name="email" required autocomplete="email" />
+        
         <label for="message">Message</label>
         <textarea id="message" name="message" rows="5" required></textarea>
+        
         <button type="submit" class="btn-primary">Send</button>
       </form>
 
-      <!-- Download Resume Button -->
-      <a href="cv/Arbi Pacolli CV.pdf" download="Arbi_Pacolli_Resume.pdf" class="btn-primary" aria-label="Download Arbi Pacolli resume">
+      <a href="cv/Arbi Pacolli CV.pdf" download="Arbi_Pacolli_Resume.pdf" class="btn-primary" aria-label="Download resume">
         Resume
       </a>
     </section>
 
-    <!-- Back to Top Button -->
-<button id="backToTop" aria-label="Back to top" style="display:none;position:fixed;bottom:32px;right:32px;z-index:1000;" class="btn-primary">
-  ↑ Top
-</button>
-
-
-    <footer>
-      <p>&copy; 2025 Arbi Dev</p>
-      <a href="https://github.com/biTo24" target="_blank" rel="noopener" aria-label="GitHub">
-        <img src="images/github.png" alt="GitHub" tabindex="0" />
-      </a>
-      <a href="https://www.linkedin.com/in/arbipacolli/" target="_blank" rel="noopener" aria-label="LinkedIn">
-        <img src="images/linkedin.png" alt="LinkedIn" tabindex="0" />
-      </a>
-    </footer>
-
+    <!-- Back to Top -->
+    <button id="backToTop" aria-label="Back to top" style="display:none;position:fixed;bottom:32px;right:32px;z-index:1000;" class="btn-primary">
+      ↑ Top
+    </button>
   </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Arbi Dev</p>
+    <a href="https://github.com/biTo24" target="_blank" rel="noopener" aria-label="GitHub Profile">
+      <img src="images/github.png" alt="GitHub" />
+    </a>
+    <a href="https://www.linkedin.com/in/arbipacolli/" target="_blank" rel="noopener" aria-label="LinkedIn Profile">
+      <img src="images/linkedin.png" alt="LinkedIn" />
+    </a>
+  </footer>
 
   <script src="script.js"></script>
 </body>
