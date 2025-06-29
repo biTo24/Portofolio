@@ -551,31 +551,31 @@ footer img:focus {
   ul {
     flex-direction: column;
     align-items: center;
-    gap: 0.6rem;
-    margin-top: 1rem;
+    gap: 0.4rem;
+    margin-top: 0.7rem;
   }
 
   ul li a {
-    font-size: 1rem;
-    padding: 0.3rem 0.6rem;
+    font-size: 0.85rem;
+    padding: 0.2rem 0.4rem;
   }
 
   h2 {
-    font-size: 1.4rem;
-    padding: 0.3rem 0;
+    font-size: 1.1rem;
+    padding: 0.2rem 0;
   }
 
   .hero {
-    padding: 1rem 0.5rem;
+    padding: 0.5rem 0.2rem;
   }
 
   .hero-text h1 {
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    margin-bottom: 0.6rem;
   }
 
   .hero-text p {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 
   #about,
@@ -583,9 +583,10 @@ footer img:focus {
   #experience,
   #projects,
   #contact {
-    max-width: 95vw;
-    margin: 1.5rem auto;
-    padding: 1.5rem 1rem;
+    max-width: 98vw;
+    margin: 0.7rem auto;
+    padding: 0.7rem 0.5rem;
+    border-radius: 1rem;
   }
 
   #about h2,
@@ -593,67 +594,71 @@ footer img:focus {
   #experience h2,
   #projects h2,
   #contact h2 {
-    font-size: 1.4rem;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
   }
 
   #about p,
   #skills h3,
   .project-card p,
   .experience-item p {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
   }
 
   #skills,
   #experience,
   #projects {
-    gap: 0.6rem;
+    gap: 0.3rem;
   }
 
   .skill-items {
     justify-content: center;
-    gap: 0.3rem;
+    gap: 0.15rem;
   }
 
   .skill-item {
-    font-size: 0.7rem;
-    padding: 0.2rem 0.4rem;
+    font-size: 0.6rem;
+    padding: 0.1rem 0.2rem;
     min-width: auto;
   }
 
   .experience-list {
-    gap: 0.6rem;
+    gap: 0.3rem;
   }
 
   .experience-item {
-    padding: 0.6rem 0.8rem;
-    font-size: 0.75rem;
-    line-height: 1.2;
+    padding: 0.3rem 0.4rem;
+    font-size: 0.6rem;
+    line-height: 1.1;
+    border-radius: 0.7rem;
   }
 
   .project-grid {
     flex-direction: column;
-    gap: 0.8rem;
+    gap: 0.4rem;
   }
 
   .project-card {
     min-width: 100%;
     max-width: 100%;
-    padding: 0.6rem 0.8rem;
-    font-size: 0.85rem;
+    padding: 0.3rem 0.4rem;
+    font-size: 0.7rem;
+    border-radius: 0.7rem;
   }
 
   .project-card h3 {
-    font-size: 1rem;
-    margin-bottom: 0.4rem;
+    font-size: 0.8rem;
+    margin-bottom: 0.2rem;
   }
 
   .project-card p {
-    font-size: 0.8rem;
+    font-size: 0.65rem;
   }
 
   .tech-stack span {
-    font-size: 0.65rem;
-    padding: 0.15rem 0.4rem;
+    font-size: 0.5rem;
+    padding: 0.08rem 0.2rem;
+    border-radius: 0.5rem;
   }
 
   #contactForm {
@@ -661,31 +666,33 @@ footer img:focus {
   }
 
   #contactForm label {
-    font-size: 0.85rem;
+    font-size: 0.7rem;
   }
 
   #contactForm input,
   #contactForm textarea {
-    font-size: 0.75rem;
-    padding: 0.4rem;
+    font-size: 0.6rem;
+    padding: 0.2rem;
+    border-radius: 0.5rem;
   }
 
   .btn-primary,
   a.btn-primary[download] {
-    font-size: 0.8rem;
-    padding: 0.5rem 1rem;
+    font-size: 0.65rem;
+    padding: 0.3rem 0.7rem;
+    border-radius: 0.7rem;
   }
 
   footer {
     flex-direction: column;
     text-align: center;
-    gap: 0.4rem;
-    padding: 0.8rem 1rem;
-    font-size: 0.75rem;
+    gap: 0.2rem;
+    padding: 0.4rem 0.5rem;
+    font-size: 0.6rem;
   }
 
   footer img {
-    width: 1.3rem;
-    height: 1.3rem;
+    width: 1rem;
+    height: 1rem;
   }
 }
