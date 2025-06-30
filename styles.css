@@ -1,51 +1,68 @@
-
-body {
-  background-color: #0d1333; /* Even darker blue */
+/* GLOBAL RESET */
+*, *::before, *::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  color: #2196f3; /* Blue text */
-  font-family: 'Lora', 'Arial', sans-serif;
-
 }
 
+/* BODY with image background and gradient overlay */
+body {
+  margin: 0;
+  padding: 0;
+  background: 
+    linear-gradient(rgba(13, 19, 51, 0.9), rgba(10, 17, 40, 0.9)),
+    url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #e3f2fd;
+  font-family: 'Lora', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
 
-/* Ul Header */
+/* UL Header */
 ul {
   list-style: none;
   padding: 0;
-  margin: 3rem 0 0 0; /* Move down from the very top */
+  margin: 3rem 0 0 0;
   display: flex;
-  justify-content: center; /* Center horizontally */
+  justify-content: center;
   align-items: flex-start;
-  height: auto;
   gap: 2rem;
 }
 
 ul li a {
   text-decoration: none;
-  color: #2196f3;
-  font-size: 1.5rem;
-  transition: color 0.3s, border-bottom 0.3s;
+  color: #e3f2fd; /* Matches body text for consistency */
+  font-size: 1.25rem;
   padding: 0.5rem 1rem;
   border-bottom: 2px solid transparent;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
 ul li a:hover {
-  color: #fff;
-  border-bottom: 2px solid #2196f3;
+  color: #21cbf3; /* Brighter blue on hover */
+  border-bottom: 2px solid #21cbf3;
 }
 
+/* Header Title (optional) */
 h2 {
-  height: 3.5rem; /* Match ul height (approximate) */
+  height: 3.5rem;
   display: flex;
   align-items: center;
   margin: 0;
-  color: #2196f3;
+  color: #e3f2fd;
   font-size: 2rem;
+  font-weight: 600;
 }
 
-/* Hero */
-.hero {
+/* HERO SECTION */
+
+  .hero {
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -53,67 +70,102 @@ h2 {
   position: relative;
   flex-direction: column;
   text-align: center;
+  background: 
+    linear-gradient(rgba(13, 19, 51, 0.85), rgba(10, 17, 40, 0.85)),
+    url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #e3f2fd;
+  padding: 2rem;
 }
 
 .hero-bg {
-  position: absolute;
-  inset: 0;
-  background: rgba(13, 19, 51, 0.85);
-  z-index: 0;
+  display: none; /* No longer needed since .hero has the bg */
 }
 
+/* HERO TEXT CONTENT */
 .hero-text {
   position: relative;
   z-index: 1;
-  color: #fff;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
 }
 
 .hero-text h1 {
-  font-size: 4.5rem;
+  font-size: 4rem;
   margin-bottom: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #2196f3, #21cbf3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .hero-text p {
-  font-size: 3rem; /* Increased font size */
-  color: #2196f3;
+  font-size: 2rem;
+  color: #e3f2fd;
+  opacity: 0.9;
 }
 
-/* About Me section */
-#about {
-  background: rgba(33, 150, 243, 0.08);
-  border-radius: 1.5rem;
-  max-width: 700px;
-  margin: 3rem auto 0 auto;
-  padding: 2.5rem 2rem;
-  box-shadow: 0 4px 24px rgba(33, 150, 243, 0.12);
-  position: relative;
-  transition: box-shadow 0.3s, background 0.3s, outline 0.3s;
-  text-align: center;
-  outline: 2px solid transparent;
-  outline-offset: 0.2rem;
+/* About Section */
+.about-container {
+  display: flex;
+  flex-direction: row; /* Row direction: text left, image right */
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2.5rem; /* Increased gap for more space between text and image */
+  max-width: 900px;
+  margin: 4rem auto 2rem auto;
+  padding: 0 1rem;
+}
+.about-photo {
+  order: 5; /* Image on the right */
+  flex-shrink: 0;
+  display: flex;
+  justify-content: flex-end;
+  margin-left: 14rem; /* Increased gap to move photo further right */
 }
 
-#about:hover,
-#about:focus-within {
-  background: rgba(33, 150, 243, 0.15);
-  box-shadow: 0 8px 32px rgba(33, 150, 243, 0.18);
-  outline: 2.5px solid #2196f3;
+.about-photo img {
+  width: 340px;
+  height: 340px;
+  object-fit: cover;
+  border-radius: 1.5rem; /* Rounded corners for square shape */
+  border: 3px solid #2196f3;
+  box-shadow: 0 4px 15px rgba(33, 203, 243, 0.4);
 }
 
-#about h2 {
-  color: #fff;
-  font-size: 2.2rem;
+.about-text {
+  order: 1; /* Text on the left */
+  color: #e3f2fd;
+  font-family: 'Lora', serif;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align text to the left within the left side */
+  margin-left: -10rem; /* Move text more to the left */
+}
+
+
+.about-text h2 {
+  font-size: 2.6rem;
+  font-weight: 700;
   margin-bottom: 1.2rem;
-  letter-spacing: 1px;
+  background: linear-gradient(90deg, #2196f3 0%, #21cbf3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-#about p {
-  color: #b3e5fc;
-  font-size: 1.25rem;
+.about-text p {
+  font-size: 1.4rem;
   line-height: 1.7;
-  margin: 0;
-  text-align: center;
+  margin-bottom: 1rem;
 }
+
+
 
 /* Skills Section */
 #skills {
