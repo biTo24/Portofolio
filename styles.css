@@ -27,8 +27,29 @@ body {
 }
 
 
+/* HEADER - stays fixed at top and fades on scroll */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+  opacity: 1;
+}
+
+/* When scrolled, fade header */
+header.nav-faded {
+  opacity: 0.65;
+}
+
+/* When hovered, make it full again */
+header.nav-faded:hover {
+  opacity: 1;
+}
+
 /* UL Header */
-ul {
+nav ul {
   list-style: none;
   padding: 0;
   margin: 3rem 0 0 0;
@@ -36,21 +57,35 @@ ul {
   justify-content: center;
   align-items: flex-start;
   gap: 2rem;
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-ul li a {
+nav.nav-faded ul {
+  opacity: 0.65;
+  pointer-events: auto;
+}
+
+/* Nav link styles */
+nav ul li a {
   text-decoration: none;
   color: #e3f2fd;
-  font-size: 1.25rem;
-  padding: 0.5rem 1rem;
+  font-size: 1.7rem;
+  padding: 0.7rem 1.3rem;
   border-bottom: 2px solid transparent;
-  transition: color 0.3s ease, border-bottom 0.3s ease;
+  transition:
+    color 0.3s,
+    border-bottom 0.3s;
+  /* Removed text-decoration-color and text-underline-offset to avoid double underline */
 }
 
-ul li a:hover {
+/* Hover & Focus */
+nav ul li a:hover,
+nav ul li a:focus {
   color: #21cbf3;
   border-bottom: 2px solid #21cbf3;
+  /* Removed text-decoration: underline to avoid double underline */
 }
+
 
 /* Header Title */
 h2 {
@@ -59,7 +94,7 @@ h2 {
   align-items: center;
   margin: 0;
   color: #e3f2fd;
-  font-size: 2rem;
+  font-size: 2.6rem;
   font-weight: 600;
 }
 
@@ -166,85 +201,6 @@ h2 {
   margin-bottom: 1rem;
 }
 
-
-/* Skills Section */
-#skills {
-    background: rgba(33, 150, 243, 0.08);
-    border-radius: 1.5rem;
-    max-width: 700px;
-    margin: 3rem auto 0 auto;
-    padding: 2.5rem 2rem 2rem 2rem;
-    box-shadow: 0 4px 24px rgba(33, 150, 243, 0.10);
-    position: relative;
-    text-align: center;
-    transition: box-shadow 0.3s, background 0.3s, outline 0.3s;
-    outline: 2px solid transparent;
-    outline-offset: 0.2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-#skills:hover,
-#skills:focus-within {
-    background: rgba(33, 150, 243, 0.18);
-    box-shadow: 0 8px 32px rgba(33, 150, 243, 0.18);
-    outline: 2.5px solid #2196f3;
-}
-
-#skills h2 {
-    color: #fff;
-    font-size: 2.2rem;
-    margin-bottom: 1.2rem;
-    letter-spacing: 1px;
-}
-
-#skills section {
-    margin-bottom: 1.5rem;
-}
-
-#skills h3 {
-    color: #2196f3;
-    font-size: 1.5rem;
-    margin-bottom: 1.1rem;
-    margin-top: 0;
-    letter-spacing: 0.5px;
-    font-weight: 600;
-    text-align: center;
-}
-
-.skill-items {
-    display: flex;
-    justify-content: center;
-    gap: 1.2rem;
-    flex-wrap: wrap;
-    margin-bottom: 0.5rem;
-    padding: 0;
-    list-style: none;
-}
-
-.skill-items li {
-    background: rgba(33, 150, 243, 0.18);
-    color: #fff;
-    border-radius: 2rem;
-    padding: 0.5rem 1.3rem;
-    font-size: 1.1rem;
-    font-weight: 500;
-    box-shadow: 0 2px 8px rgba(33, 150, 243, 0.10);
-    transition: background 0.2s, color 0.2s, transform 0.2s;
-    border: 1px solid rgba(33, 150, 243, 0.25);
-    margin-bottom: 0.3rem;
-    outline: none;
-    cursor: pointer;
-}
-
-.skill-items li:hover,
-.skill-items li:focus {
-    background: #2196f3;
-    color: #0d1333;
-    transform: translateY(-3px) scale(1.06);
-}
-
 /* Experience Section */
 #experience {
   background: rgba(33, 150, 243, 0.08);
@@ -334,6 +290,84 @@ h2 {
   font-size: 1.08rem;
   line-height: 1.6;
 }
+
+/* Skills Section */
+#skills {
+    background: rgba(33, 150, 243, 0.08);
+    border-radius: 1.5rem;
+    max-width: 700px;
+    margin: 3rem auto 0 auto;
+    padding: 2.5rem 2rem 2rem 2rem;
+    box-shadow: 0 4px 24px rgba(33, 150, 243, 0.10);
+    position: relative;
+    text-align: center;
+    transition: box-shadow 0.3s, background 0.3s, outline 0.3s;
+    outline: 2px solid transparent;
+    outline-offset: 0.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}    
+
+#skills:hover,
+#skills:focus-within {
+    background: rgba(33, 150, 243, 0.18);
+    box-shadow: 0 8px 32px rgba(33, 150, 243, 0.18);
+    outline: 2.5px solid #2196f3;
+}    
+
+#skills h2 {
+    color: #fff;
+    font-size: 2.2rem;
+    margin-bottom: 1.2rem;
+    letter-spacing: 1px;
+}    
+
+#skills section {
+    margin-bottom: 1.5rem;
+}    
+
+#skills h3 {
+    color: #2196f3;
+    font-size: 1.5rem;
+    margin-bottom: 1.1rem;
+    margin-top: 0;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    text-align: center;
+}    
+
+.skill-items {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+    padding: 0;
+    list-style: none;
+}    
+
+.skill-items li {
+    background: rgba(33, 150, 243, 0.18);
+    color: #fff;
+    border-radius: 2rem;
+    padding: 0.5rem 1.3rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(33, 150, 243, 0.10);
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+    border: 1px solid rgba(33, 150, 243, 0.25);
+    margin-bottom: 0.3rem;
+    outline: none;
+    cursor: pointer;
+}    
+
+.skill-items li:hover,
+.skill-items li:focus {
+    background: #2196f3;
+    color: #0d1333;
+    transform: translateY(-3px) scale(1.06);
+}    
 
 /* Projects Section */
 #projects {

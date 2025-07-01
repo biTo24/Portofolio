@@ -17,9 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const startPosition = window.pageYOffset;
     const distance = targetPosition - startPosition;
 
-    // Make duration longer if scrolling down, shorter if up
     const duration = distance > 0 ? baseDuration * 1.8 : baseDuration * 0.8;
-
     let startTime = null;
 
     function easeInOutCubic(t) {
@@ -42,8 +40,8 @@ document.addEventListener("DOMContentLoaded", () => {
     requestAnimationFrame(animation);
   }
 
-  // Fix selector to target sidebar nav links
-  const navLinks = document.querySelectorAll("aside nav ul li a");
+  // Scroll to section on nav link click
+  const navLinks = document.querySelectorAll("header nav ul li a");
   navLinks.forEach(link => {
     link.addEventListener("click", event => {
       event.preventDefault();
@@ -55,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Typed.js effect
+  // Typed.js animated typing effect
   if (typeof Typed !== "undefined") {
     new Typed("#typed-text", {
       strings: [
@@ -72,24 +70,35 @@ document.addEventListener("DOMContentLoaded", () => {
       cursorChar: "|"
     });
   }
-    // Back to Top button functionality
+
+  // Back to Top button functionality
   const backToTopButton = document.getElementById("backToTop");
-
-  // Show or hide the button based on scroll position
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) {
-      backToTopButton.style.display = "block";
-    } else {
-      backToTopButton.style.display = "none";
-    }
-  });
-
-  // Smooth scroll to top on click
-  backToTopButton.addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
+  if (backToTopButton) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        backToTopButton.style.display = "block";
+      } else {
+        backToTopButton.style.display = "none";
+      }
     });
-  });
 
+    backToTopButton.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+  }
+
+  // Add 'nav-faded' class to header on scroll
+  const headerEl = document.querySelector("header");
+  if (headerEl) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 60) {
+        headerEl.classList.add("nav-faded");
+      } else {
+        headerEl.classList.remove("nav-faded");
+      }
+    });
+  }
 });
