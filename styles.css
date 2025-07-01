@@ -5,24 +5,27 @@
   padding: 0;
 }
 
-/* BODY with image background and gradient overlay */
+/* BODY with image background and blueish gradient overlay */
 body {
   margin: 0;
   padding: 0;
-  background: 
-    linear-gradient(rgba(13, 19, 51, 0.9), rgba(10, 17, 40, 0.9)),
+  background:
+    linear-gradient(rgba(10, 25, 55, 0.95), rgba(5, 15, 40, 0.95)),
     url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80');
   background-size: cover;
-  background-position: center;
+  background-position: center center;
+  background-repeat: no-repeat;
   background-attachment: fixed;
-  color: #e3f2fd;
-  font-family: 'Lora', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+  color: #21cbf3;  /* brighter blue, main font color */
+  font-family: 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
   font-size: 16px;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  min-height: 100vh;
 }
+
 
 /* UL Header */
 ul {
@@ -37,7 +40,7 @@ ul {
 
 ul li a {
   text-decoration: none;
-  color: #e3f2fd; /* Matches body text for consistency */
+  color: #e3f2fd;
   font-size: 1.25rem;
   padding: 0.5rem 1rem;
   border-bottom: 2px solid transparent;
@@ -45,11 +48,11 @@ ul li a {
 }
 
 ul li a:hover {
-  color: #21cbf3; /* Brighter blue on hover */
+  color: #21cbf3;
   border-bottom: 2px solid #21cbf3;
 }
 
-/* Header Title (optional) */
+/* Header Title */
 h2 {
   height: 3.5rem;
   display: flex;
@@ -61,8 +64,7 @@ h2 {
 }
 
 /* HERO SECTION */
-
-  .hero {
+.hero {
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -70,7 +72,7 @@ h2 {
   position: relative;
   flex-direction: column;
   text-align: center;
-  background: 
+  background:
     linear-gradient(rgba(13, 19, 51, 0.85), rgba(10, 17, 40, 0.85)),
     url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80');
   background-size: cover;
@@ -81,10 +83,9 @@ h2 {
 }
 
 .hero-bg {
-  display: none; /* No longer needed since .hero has the bg */
+  display: none;
 }
 
-/* HERO TEXT CONTENT */
 .hero-text {
   position: relative;
   z-index: 1;
@@ -112,42 +113,42 @@ h2 {
 /* About Section */
 .about-container {
   display: flex;
-  flex-direction: row; /* Row direction: text left, image right */
+  flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  gap: 2.5rem; /* Increased gap for more space between text and image */
+  gap: 3rem; /* pak më shumë hapësirë midis tekstit dhe fotos */
   max-width: 900px;
   margin: 4rem auto 2rem auto;
   padding: 0 1rem;
 }
+
 .about-photo {
-  order: 5; /* Image on the right */
   flex-shrink: 0;
   display: flex;
   justify-content: flex-end;
-  margin-left: 14rem; /* Increased gap to move photo further right */
+  order: 2; /* Foto në të djathtë */
 }
 
 .about-photo img {
-  width: 340px;
-  height: 340px;
+  width: 320px;
+  height: 320px;
   object-fit: cover;
-  border-radius: 1.5rem; /* Rounded corners for square shape */
+  border-radius: 1.5rem;
   border: 3px solid #2196f3;
   box-shadow: 0 4px 15px rgba(33, 203, 243, 0.4);
 }
 
 .about-text {
-  order: 1; /* Text on the left */
+  order: 1; /* Teksti në të majtë */
   color: #e3f2fd;
   font-family: 'Lora', serif;
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Align text to the left within the left side */
-  margin-left: -10rem; /* Move text more to the left */
+  align-items: flex-start;
+  /* heq marginën negative */
+  margin-left: 0;
 }
-
 
 .about-text h2 {
   font-size: 2.6rem;
@@ -164,7 +165,6 @@ h2 {
   line-height: 1.7;
   margin-bottom: 1rem;
 }
-
 
 
 /* Skills Section */
