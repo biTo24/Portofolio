@@ -1,29 +1,15 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // Header click color change
-  const header = document.querySelector("header");
-  if (header) {
-    header.addEventListener("click", () => {
-      header.style.transition = "background-color 0.3s ease";
-      header.style.backgroundColor = "#007bff";
-    });
-  }
 
-  // Smooth scroll to center the element vertically in viewport
+  // Smooth scroll to center the element
   function smoothScrollToCenter(element, baseDuration = 700) {
-    const elementRect = element.getBoundingClientRect();
-    const elementCenterY = elementRect.top + window.pageYOffset + elementRect.height / 2;
-    const viewportCenterY = window.innerHeight / 2;
-    const targetPosition = elementCenterY - viewportCenterY;
-    const startPosition = window.pageYOffset;
-    const distance = targetPosition - startPosition;
-
+    const rect = element.getBoundingClientRect();
+    const targetY = rect.top + window.pageYOffset + rect.height / 2 - window.innerHeight / 2;
+    const startY = window.pageYOffset;
+    const distance = targetY - startY;
     const duration = distance > 0 ? baseDuration * 1.8 : baseDuration * 0.8;
     let startTime = null;
 
     function easeInOutCubic(t) {
-      return t < 0.5
-        ? 4 * t * t * t
-        : 1 - Math.pow(-2 * t + 2, 3) / 2;
+      return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
     }
 
     function animation(currentTime) {
@@ -31,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const timeElapsed = currentTime - startTime;
       const progress = Math.min(timeElapsed / duration, 1);
       const ease = easeInOutCubic(progress);
-      window.scrollTo(0, startPosition + distance * ease);
+      window.scrollTo(0, startY + distance * ease);
       if (timeElapsed < duration) {
         requestAnimationFrame(animation);
       }
@@ -40,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     requestAnimationFrame(animation);
   }
 
-  // Scroll to section on nav link click
+  // Smooth scroll for nav links
   const navLinks = document.querySelectorAll("header nav ul li a");
   navLinks.forEach(link => {
     link.addEventListener("click", event => {
@@ -48,12 +34,12 @@ document.addEventListener("DOMContentLoaded", () => {
       const targetId = link.getAttribute("href").slice(1);
       const targetElement = document.getElementById(targetId);
       if (targetElement) {
-        smoothScrollToCenter(targetElement, 700);
+        smoothScrollToCenter(targetElement);
       }
     });
   });
 
-  // Typed.js animated typing effect
+  // Typed.js typing effect
   if (typeof Typed !== "undefined") {
     new Typed("#typed-text", {
       strings: [
@@ -71,34 +57,35 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Back to Top button functionality
+  // Back to Top button
   const backToTopButton = document.getElementById("backToTop");
   if (backToTopButton) {
     window.addEventListener("scroll", () => {
-      if (window.scrollY > 300) {
-        backToTopButton.style.display = "block";
-      } else {
-        backToTopButton.style.display = "none";
-      }
+      backToTopButton.style.display = window.scrollY > 300 ? "block" : "none";
     });
 
     backToTopButton.addEventListener("click", () => {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
+      window.scrollTo({ top: 0, behavior: "smooth" });
     });
   }
 
-  // Add 'nav-faded' class to header on scroll
-  const headerEl = document.querySelector("header");
-  if (headerEl) {
+  // Add 'nav-faded' class on scroll (throttled)
+  if (header) {
+    let lastScroll = 0;
+    let ticking = false;
+
     window.addEventListener("scroll", () => {
-      if (window.scrollY > 60) {
-        headerEl.classList.add("nav-faded");
-      } else {
-        headerEl.classList.remove("nav-faded");
+      lastScroll = window.scrollY;
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          if (lastScroll > 60) {
+            header.classList.add("nav-faded");
+          } else {
+            header.classList.remove("nav-faded");
+          }
+          ticking = false;
+        });
+        ticking = true;
       }
     });
   }
-});
