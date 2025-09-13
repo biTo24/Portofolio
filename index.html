@@ -3,22 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>My Portfolio</title>
-  <link rel="stylesheet" href="styles.css" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-
+  <title>Arbi Pacolli | Portfolio</title>
   
+  <!-- SEO + Social -->
+  <meta name="description" content="Portfolio of Arbi Pacolli — software developer, app builder, and networking enthusiast.">
+  <meta property="og:title" content="Arbi Pacolli - Portfolio">
+  <meta property="og:description" content="Projects, experience, and tech stack.">
+  <meta property="og:image" content="images/preview.png">
+  <meta property="og:type" content="website">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Typed.js -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </head>
 <body>
 
-  <!-- Header Navigation -->
+  <!-- Header -->
   <header>
-    <nav aria-label="Main navigation">
-      <ul>
+    <nav aria-label="Main navigation" class="navbar">
+      <a class="logo" href="#hero">Arbi<span>Dev</span></a>
+      <ul class="nav-links">
         <li><a href="#hero">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
@@ -29,119 +40,105 @@
     </nav>
   </header>
 
-  <!-- Main Content -->
   <main id="content">
-    
-    <!-- Hero Section -->
+
+    <!-- Hero -->
     <section id="hero" class="hero" aria-label="Introduction and welcome">
-      <div class="hero-bg" aria-hidden="true"></div>
       <div class="hero-text">
         <h1>Arbi Pacolli</h1>
-        <p id="typed-text" aria-live="polite" aria-atomic="true"></p>
+        <p id="typed-text"></p>
+        <a href="#projects" class="btn-primary">View My Work</a>
       </div>
     </section>
 
-    <!-- About Me Section -->
-<section id="about" aria-label="About Me" tabindex="0">
-  <div class="about-container">
-    <div class="about-photo">
-      <img src="your-photo.jpg" alt="Photo of Arbi" />
-    </div>
-    <div class="about-text">
-      <h2>About Me</h2>
-      <p>
-        I am a high school student passionate about app development, actively working on real projects such as building dynamic websites, stealthy data scraping, and creating Django applications with reliable data storage. I continuously learn networking concepts through CCNA certifications, explore cloud fundamentals like AWS, and automate workflows using Python.
-      </p>
-      <p>
-        Comfortable and experienced with tools like VS Code, JavaScript (Node.js), Java Servlets, and MS Access databases. I take a practical, hands-on approach to programming, combining formal education at SH.M.L “Gjin Gazulli” with real-world experience.
-      </p>
-      <p>
-        Driven by a mindset focused on growth, efficiency, and building secure, scalable software solutions with real impact. Always seeking opportunities to improve skills and contribute meaningfully to technology projects.
-      </p>
-    </div>
-  </div>
-</section>
+    <!-- About -->
+    <section id="about" aria-label="About Me">
+      <div class="about-container">
+        <div class="about-photo">
+          <img src="images/arbi.jpg" alt="Portrait of Arbi Pacolli" loading="lazy" />
+        </div>
+        <div class="about-text">
+          <h2>About Me</h2>
+          <p>
+            I am a high school student passionate about app development, actively working on real projects such as building dynamic websites, stealthy data scraping, and creating Django applications with reliable data storage. I continuously learn networking concepts through CCNA certifications, explore cloud fundamentals like AWS, and automate workflows using Python.
+          </p>
+          <p>
+            Comfortable and experienced with tools like VS Code, JavaScript (Node.js), Java Servlets, and MS Access databases. I take a practical, hands-on approach to programming, combining formal education at SH.M.L “Gjin Gazulli” with real-world experience.
+          </p>
+          <p>
+            Driven by a mindset focused on growth, efficiency, and building secure, scalable software solutions with real impact. Always seeking opportunities to improve skills and contribute meaningfully to technology projects.
+          </p>
+        </div>
+      </div>
+    </section>
 
-<!-- Experience Section -->
-  <section id="experience" aria-label="Work experience">
-    <h2>Experience</h2>
-      <article>
-        <h3>Social Media Intern – Dyqani.com <span class="date">July – August 2024</span></h3>
-        <p>Managed and maintained the company's social media presence, contributing to digital outreach and engagement strategies.</p>
-      </article>
-      <article>
-        <h3>Software Development Intern – Polymath Services <span class="date">July – August 2024</span></h3>
-        <p>Worked with cloud technologies (AWS) and contributed to software development projects using modern programming practices.</p>
-      </article>
-      <article>
-        <h3>IT & Technical Intern – Home Property Management <span class="date">June – Ongoing</span></h3>
-        <p>Configured internet modems, set up client authorizations, and installed security camera systems with remote access functionality.</p>
-      </article>
-  </section>
-
-  <section id="skills" aria-label="Technical skills">
-  <h2>Tech-Stack</h2>
-  <div class="skills-grid">
-    <section class="skill-category" id="programming-languages">
-      <h3>Programming Languages</h3>
-      <ul class="skill-items">
-        <li>Python</li>
-        <li>JavaScript</li>
-        <li>Java</li>
-        <li>HTML</li>
-        <li>CSS</li>
+    <!-- Experience -->
+    <section id="experience" aria-label="Work experience">
+      <h2>Experience</h2>
+      <ul class="timeline">
+        <li>
+          <h3>Social Media Intern – Dyqani.com <span class="date">Jul – Aug 2024</span></h3>
+          <p>Managed and maintained the company's social media presence, contributing to digital outreach and engagement strategies.</p>
+        </li>
+        <li>
+          <h3>Software Development Intern – Polymath Services <span class="date">Jul – Aug 2024</span></h3>
+          <p>Worked with cloud technologies (AWS) and contributed to software development projects using modern programming practices.</p>
+        </li>
+        <li>
+          <h3>IT & Technical Intern – Home Property Management <span class="date">Jun 2024 – Ongoing</span></h3>
+          <p>Configured internet modems, set up client authorizations, and installed security camera systems with remote access functionality.</p>
+        </li>
       </ul>
     </section>
 
-    <section class="skill-category" id="frameworks">
-      <h3>Frameworks</h3>
-      <ul class="skill-items">
-        <li>Django</li>
-        <li>Node.js</li>
-        <li>Flask</li>
-        <li>Spring Boot</li>
-      </ul>
+    <!-- Skills -->
+    <section id="skills" aria-label="Technical skills">
+      <h2>Tech-Stack</h2>
+      <div class="skills-grid">
+        <section class="skill-category">
+          <h3>Programming Languages</h3>
+          <ul>
+            <li>Python</li><li>JavaScript</li><li>Java</li><li>HTML</li><li>CSS</li>
+          </ul>
+        </section>
+        <section class="skill-category">
+          <h3>Frameworks</h3>
+          <ul>
+            <li>Django</li><li>Node.js</li><li>Flask</li><li>Spring Boot</li>
+          </ul>
+        </section>
+        <section class="skill-category">
+          <h3>Cloud & DevOps</h3>
+          <ul>
+            <li>AWS</li><li>Docker</li><li>GitHub Actions</li>
+          </ul>
+        </section>
+        <section class="skill-category">
+          <h3>Networking & Cybersecurity</h3>
+          <ul>
+            <li>CCNA</li><li>Cybersecurity</li><li>Router/Switch Configurations</li><li>Network Security</li>
+          </ul>
+        </section>
+      </div>
     </section>
 
-    <section class="skill-category" id="cloud-devops">
-      <h3>Cloud & DevOps</h3>
-      <ul class="skill-items">
-        <li>AWS</li>
-        <li>Docker</li>
-        <li>GitHub Actions</li>
-      </ul>
-    </section>
-
-    <section class="skill-category" id="networking-cybersecurity">
-      <h3>Networking & Cybersecurity</h3>
-      <ul class="skill-items">
-        <li>CCNA</li>
-        <li>Cybersecurity</li>
-        <li>Router/Switch Configurations</li>
-        <li>Network Security</li>
-      </ul>
-    </section>
-  </div>
-</section>
-  
-
-    <!-- Projects Section -->
+    <!-- Projects -->
     <section id="projects" aria-label="Project portfolio">
       <h2>Projects</h2>
       <article class="project-card">
-        <h3>Undetectable News Extraction</h3>
-        <p>Stealth news scraper with Tkinter GUI and CSV storage. Extracts headlines from multiple sites while avoiding detection. User-friendly interface with customizable sources and offline data access.</p>
-        <ul class="tech-stack">
-          <li>Python</li>
-          <li>Tkinter</li>
-          <li>BeautifulSoup</li>
-          <li>Web Scraping</li>
-          <li>API Integration</li>
-        </ul>
+        <img src="images/news-extraction.png" alt="Screenshot of News Extraction Tool" loading="lazy">
+        <div class="project-info">
+          <h3>Undetectable News Extraction</h3>
+          <p>Stealth news scraper with Tkinter GUI and CSV storage. Extracts headlines from multiple sites while avoiding detection. User-friendly interface with customizable sources and offline data access.</p>
+          <ul class="tech-stack">
+            <li>Python</li><li>Tkinter</li><li>BeautifulSoup</li><li>Web Scraping</li><li>API Integration</li>
+          </ul>
+          <a href="https://github.com/biTo24/undetectable-news" target="_blank" class="btn-secondary">View Code</a>
+        </div>
       </article>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact -->
     <section id="contact" aria-label="Contact form">
       <h2>Contact Me</h2>
       <form id="contactForm" action="your-backend-endpoint" method="POST">
@@ -156,29 +153,28 @@
         
         <button type="submit" class="btn-primary">Send</button>
       </form>
-
-      <a href="cv/Arbi Pacolli CV.pdf" download="Arbi_Pacolli_Resume.pdf" class="btn-primary" aria-label="Download resume">
-        Resume
-      </a>
+      <p>Or reach me directly at <a href="mailto:arbipacolli@gmail.com">arbipacolli@gmail.com</a></p>
+      <a href="cv/Arbi Pacolli CV.pdf" download="Arbi_Pacolli_Resume.pdf" class="btn-primary">Download Resume</a>
     </section>
 
     <!-- Back to Top -->
-    <button id="backToTop" aria-label="Back to top" style="display:none;position:fixed;bottom:32px;right:32px;z-index:1000;" class="btn-primary">
-      ↑ Top
-    </button>
+    <button id="backToTop" aria-label="Back to top" class="btn-primary">↑ Top</button>
   </main>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Arbi Dev</p>
-    <a href="https://github.com/biTo24" target="_blank" rel="noopener" aria-label="GitHub Profile">
-      <img src="images/github.png" alt="GitHub" />
-    </a>
-    <a href="https://www.linkedin.com/in/arbipacolli/" target="_blank" rel="noopener" aria-label="LinkedIn Profile">
-      <img src="images/linkedin.png" alt="LinkedIn" />
-    </a>
+    <p>&copy; 2025 Arbi Pacolli — All rights reserved.</p>
+    <div class="socials">
+      <a href="https://github.com/biTo24" target="_blank" rel="noopener" aria-label="GitHub Profile">
+        <img src="images/github.png" alt="GitHub" />
+      </a>
+      <a href="https://www.linkedin.com/in/arbipacolli/" target="_blank" rel="noopener" aria-label="LinkedIn Profile">
+        <img src="images/linkedin.png" alt="LinkedIn" />
+      </a>
+    </div>
   </footer>
 
+  <!-- Scripts -->
   <script src="script.js"></script>
 </body>
 </html>
