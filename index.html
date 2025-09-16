@@ -278,46 +278,151 @@
             flex-wrap: wrap;
         }
 
-        /* Stats Section */
+        /* Stats Section - FIXED */
         .stats {
             background: var(--primary-light);
-            padding: 4rem 2rem;
+            padding: 5rem 2rem;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            margin: 3rem auto;
+            position: relative;
+            overflow: hidden;
+            max-width: 1200px;
+        }
+
+        .stats::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
         }
 
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            gap: 2.5rem;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .stat-card {
             background: var(--card-bg);
-            padding: 2rem;
-            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
             text-align: center;
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: transform 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 250px;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
         }
 
         .stat-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .stat-card:hover::before {
+            opacity: 1;
+        }
+
+        .stat-icon {
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(79, 70, 229, 0.15);
+            border-radius: 50%;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            color: var(--accent);
+            transition: transform 0.4s ease;
+        }
+
+        .stat-card:hover .stat-icon {
+            transform: scale(1.1) rotate(5deg);
         }
 
         .stat-number {
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: 800;
             color: var(--accent);
             margin-bottom: 0.5rem;
+            line-height: 1;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: all 0.4s ease;
+        }
+
+        .stat-card:hover .stat-number {
+            transform: scale(1.1);
         }
 
         .stat-label {
             color: var(--text-light);
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
         }
+
+        .stat-card:hover .stat-label {
+            color: var(--text);
+        }
+
+        .stat-description {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-top: 0.8rem;
+            opacity: 0.8;
+            max-width: 200px;
+        }
+
+        /* Animation for stats */
+        @keyframes countUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .stat-card {
+            animation: countUp 0.6s ease forwards;
+            opacity: 0;
+        }
+
+        .stat-card:nth-child(1) { animation-delay: 0.1s; }
+        .stat-card:nth-child(2) { animation-delay: 0.2s; }
+        .stat-card:nth-child(3) { animation-delay: 0.3s; }
+        .stat-card:nth-child(4) { animation-delay: 0.4s; }
 
         /* About Section */
         .about-container {
@@ -339,10 +444,12 @@
             height: auto;
             display: block;
             transition: transform 0.5s ease;
+            filter: grayscale(0.3);
         }
 
         .about-photo:hover img {
             transform: scale(1.05);
+            filter: grayscale(0);
         }
 
         .about-content h2 {
@@ -868,6 +975,34 @@
             .contact-form {
                 padding: 1.5rem;
             }
+            
+            .stats {
+                padding: 3rem 1.5rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+            
+            .stat-card {
+                min-height: 200px;
+                padding: 2rem 1.5rem;
+            }
+            
+            .stat-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.7rem;
+            }
+            
+            .stat-number {
+                font-size: 2.8rem;
+            }
+            
+            .stat-label {
+                font-size: 1.1rem;
+            }
         }
 
         @media (max-width: 576px) {
@@ -934,23 +1069,44 @@
             </div>
         </section>
 
-        <!-- Stats Section -->
+        <!-- Stats Section - FIXED -->
         <section class="stats">
-            <div class="stat-card fade-in">
-              <div class="stat-number">5+</div>
-              <div class="stat-label">Projects Built</div>
-            </div>
-            <div class="stat-card fade-in">
-              <div class="stat-number">3</div>
-              <div class="stat-label">Months Experience</div>
-            </div>
-            <div class="stat-card fade-in">
-              <div class="stat-number">3+</div>
-              <div class="stat-label">Technologies Mastered</div>
-            </div>
-            <div class="stat-card fade-in">
-              <div class="stat-number">10+</div>
-              <div class="stat-label">GitHub Contributions</div>
+            <div class="stats-grid">
+                <div class="stat-card fade-in">
+                    <div class="stat-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="stat-number" data-target="10">0</div>
+                    <div class="stat-label">Projects Built</div>
+                    <div class="stat-description">From web apps to automation scripts</div>
+                </div>
+                
+                <div class="stat-card fade-in">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-number" data-target="3">0</div>
+                    <div class="stat-label">Months Experience</div>
+                    <div class="stat-description">Professional development</div>
+                </div>
+                
+                <div class="stat-card fade-in">
+                    <div class="stat-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="stat-number" data-target="5">0</div>
+                    <div class="stat-label">Technologies Mastered</div>
+                    <div class="stat-description">Diverse technical skills</div>
+                </div>
+                
+                <div class="stat-card fade-in">
+                    <div class="stat-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <div class="stat-number" data-target="15">0</div>
+                    <div class="stat-label">GitHub Contributions</div>
+                    <div class="stat-description">Active open source participation</div>
+                </div>
             </div>
         </section>
 
@@ -970,7 +1126,7 @@
                             <a href="#contact" class="btn btn-primary">
                                 <i class="fas fa-paper-plane"></i> Contact Me
                             </a>
-                            <a href="#" class="btn btn-secondary">
+                            <a href="cv/Arbi Pacolli CV.pdf" class="btn btn-secondary">
                                 <i class="fas fa-download"></i> Download CV
                             </a>
                         </div>
@@ -1141,27 +1297,6 @@
             </div>
         </section>
 
-        <!-- Testimonials Section -->
-        <section id="testimonials">
-            <div class="container">
-                <h2>What People Say</h2>
-                <div class="testimonials-container">
-                    <div class="testimonial-card fade-in">
-                        <p class="testimonial-text">Arbi demonstrated exceptional problem-solving skills during his internship. His ability to quickly learn new technologies and apply them to real-world challenges was impressive.</p>
-                        <div class="testimonial-author">
-                            <div class="author-image">
-                                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="John Smith">
-                            </div>
-                            <div class="author-info">
-                                <h4>John Smith</h4>
-                                <p class="author-role">CTO at Polymath Services</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- Contact Section -->
         <section id="contact">
             <div class="container">
@@ -1256,6 +1391,28 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Animate numbers counting up
+            const statNumbers = document.querySelectorAll('.stat-number');
+            const duration = 2000; // Animation duration in ms
+            const frameRate = 30; // Frames per second
+            
+            statNumbers.forEach(statNumber => {
+                const target = parseInt(statNumber.getAttribute('data-target'));
+                const steps = duration / (1000 / frameRate);
+                const increment = target / steps;
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        statNumber.textContent = target + '+';
+                        clearInterval(timer);
+                    } else {
+                        statNumber.textContent = Math.floor(current) + '+';
+                    }
+                }, 1000 / frameRate);
+            });
+
             // Mobile menu toggle
             const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
             const navLinks = document.querySelector('.nav-links');
